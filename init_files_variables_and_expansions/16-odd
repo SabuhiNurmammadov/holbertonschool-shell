@@ -1,2 +1,2 @@
 #!/bin/bash
-nl | grep '^[[:space:]]*[13579][[:space:]]'
+cat -n|grep ' [0-9][13579][[:space:]]\| [13579][[:space:]]'
