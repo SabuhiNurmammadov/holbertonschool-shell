@@ -6,13 +6,8 @@ pid_file="/var/run/myscript.pid"
 # PID fayli
 echo $$ > "$pid_file"
 
-# Ctrl+C üç�
-trap 'echo "Y U no love me?!"' SIGINT
-
-# pkill  SIGTERM üç�
 trap 'echo "I hate the kill command"; rm -f "$pid_file"; exit 0' SIGTERM
-
-# SIGQUIT
+trap 'echo "Y U no love me?!"' SIGINT
 trap 'rm -f "$pid_file"; exit 0' SIGQUIT
 
 #loop
