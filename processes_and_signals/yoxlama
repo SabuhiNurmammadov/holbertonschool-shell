@@ -3,19 +3,19 @@
 
 pid_file="/var/run/myscript.pid"
 
-# PID fayli
+# PID faylını yarat
 echo $$ > "$pid_file"
 
-# Ctrl+C üç�
+# Ctrl+C üçün
 trap 'echo "Y U no love me?!"' SIGINT
 
-# pkill  SIGTERM üç�
+# pkill və ya SIGTERM üçün
 trap 'echo "I hate the kill command"; rm -f "$pid_file"; exit 0' SIGTERM
 
-# SIGQUIT
+# SIGQUIT üçün
 trap 'rm -f "$pid_file"; exit 0' SIGQUIT
 
-#loop
+# Sonsuz döngə
 while true; do
     echo "To infinity and beyond"
     sleep 2
