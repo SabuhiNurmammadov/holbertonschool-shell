@@ -18,8 +18,9 @@ stop() {
 }
 
 restart() {
-	stop
-	start
+	[ -f "$PID_FILE" ] && kill "$(cat $PID_FILE)" 2>/dev/null && rm -f "$PID_FILE"
+	$PROC &
+	echo $! > "$PID_FILE"
 	echo "manage_my_process restarted"
 }
 
