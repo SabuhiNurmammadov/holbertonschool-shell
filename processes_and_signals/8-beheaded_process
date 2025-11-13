@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 #Beheaded process
-proc="./7-highlander"
-kill "$(pgrep -f "$proc")"
+pkill -9 -f "7-highlander"
