@@ -1,2 +1,6 @@
 #!/bin/bash
-sed -n 'p;n'
+#!/bin/bash
+while IFS= read -r l
+do echo "$l"
+read -r _
+done
