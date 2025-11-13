@@ -1,6 +1,2 @@
 #!/bin/bash
-#!/bin/bash
-while IFS= read -r l
-do echo "$l"
-read -r _
-done
+awk 'NR % 2 == 1'
