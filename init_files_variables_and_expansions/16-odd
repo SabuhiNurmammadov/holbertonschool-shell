@@ -1,2 +1,1 @@
-#!/bin/bash
-nl|grep ' [13579][[:space:]]'|grep -o '[^[:space:]].*'
+paste - - | cut -f1
